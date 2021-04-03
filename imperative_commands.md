@@ -36,6 +36,19 @@ kubectl get po -o wide
 </p>
 </details>
 
+### List all pods in mynamespace
+
+<details><summary>show</summary>
+<p>
+
+```bash
+kubectl get pods --namespace=mynamespace
+kubectl get pods -n mynamespace
+```
+
+</p>
+</details>
+
 ### List all pods in all namespaces
 
 <details><summary>show</summary>
@@ -85,6 +98,18 @@ kubectl run nginx --image=nginx:alpine
 </p>
 </details>
 
+### Create pod nginx with image nginx:alpine in mynamespace
+
+<details><summary>show</summary>
+<p>
+
+```bash
+kubectl run nginx --image=nginx:alpine -n mynamespace
+```
+
+</p>
+</details>
+
 ### Delete pod mypod
 
 <details><summary>show</summary>
@@ -97,13 +122,25 @@ kubectl delete pod mypod
 </p>
 </details>
 
-### Run pod nginx and write its spec into a file called pod.yaml
+### Get pod yaml file without actually running a pod
 
 <details><summary>show</summary>
 <p>
 
 ```bash
 kubectl run mypod --image=nginx --dry-run=client -o yaml > pod.yaml
+```
+
+</p>
+</details>
+
+### Edit pod
+
+<details><summary>show</summary>
+<p>
+
+```bash
+kubectl edit pod mypod
 ```
 
 </p>
@@ -122,3 +159,16 @@ kubectl apply -f file.yaml
 </p>
 </details>
 
+### List all replication controller, replica sets and deployments
+
+<details><summary>show</summary>
+<p>
+
+```bash
+kubectl get rc
+kubectl get rs
+kubectl get deploy
+```
+
+</p>
+</details>
